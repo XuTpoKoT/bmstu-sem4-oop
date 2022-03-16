@@ -11,8 +11,8 @@ struct link_t
 
 struct links_t
 {
-    size_t count = 0;
-    link_t *data = NULL;
+    size_t count;
+    link_t *data;
 };
 
 void links_init(links_t &links);
