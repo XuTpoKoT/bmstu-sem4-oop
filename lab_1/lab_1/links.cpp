@@ -47,17 +47,3 @@ err_t links_read(links_t &links, FILE *f)
     return rc;
 }
 
-static void link_copy(link_t &dst, const link_t &src) {
-    dst.p_ind1 = src.p_ind1;
-    dst.p_ind2 = src.p_ind2;
-}
-
-err_t links_create_copy(links_t &dst, const links_t &src)
-{
-    err_t rc = links_malloc(dst, src.count);
-    if (rc == OK) {
-        for (size_t i = 0; i < dst.count; i++)
-            link_copy(dst.data[i], src.data[i]);
-    }
-    return rc;
-}

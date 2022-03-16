@@ -8,6 +8,10 @@ void message_error(const err_t &error)
             QMessageBox::critical(NULL, "Ошибка!",
                                   "Ошибка открытия файла.");
             break;
+        case FILE_CLOSE_ERR:
+            QMessageBox::critical(NULL, "Ошибка!",
+                              "Ошибка закрытия файла.");
+        break;
         case FILE_FORMAT_ERR:
             QMessageBox::critical(NULL, "Ошибка!",
                                   "Неверный формат файла.");

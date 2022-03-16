@@ -37,16 +37,6 @@ point_t points_get(const points_t &points, size_t index) {
     return points.data[index];
 }
 
-//err_t points_create_copy(points_t &dst, const points_t &src)
-//{
-//    err_t rc = points_malloc(dst, src.count);
-//    if (rc == OK) {
-//        for (size_t i = 0; i < dst.count; i++)
-//            point_copy(dst.data[i], src.data[i]);
-//    }
-//    return rc;
-//}
-
 void points_move(points_t &points, point_t &center, const move_options_t &options) {
     for (size_t i = 0; i < points.count; i++)
         point_move(points.data[i], options);

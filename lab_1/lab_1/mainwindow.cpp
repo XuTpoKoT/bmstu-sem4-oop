@@ -13,12 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->showMessage("Лабораторная работа №1, Морозов Дмитрий ИУ7-42Б");
     QGraphicsScene *scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
-
-    request_t request;
-    request.action = LOAD_FIGURE;
-    request.filename = "../lab_1/figure_3.txt";
-    request.scene = scene;
-    execute_and_show(request, ui);
 }
 
 MainWindow::~MainWindow()
@@ -43,9 +37,20 @@ err_t execute_and_show(request_t req, Ui::MainWindow *ui)
     return rc;
 }
 
+void MainWindow::on_pushButton_load_figure_clicked()
+{
+
+    request_t request;
+    request.action = LOAD_FIGURE;
+    request.filename = ui->lineEdit_model_file->text().toStdString().c_str();
+    request.scene = ui->graphicsView->scene();
+    err_t rc = execute_and_show(request, ui);
+    if (rc != OK)
+        message_error(rc);
+}
+
 void MainWindow::on_pushButton_Move_clicked()
 {
-    std::cout << "Move\n";
     request_t request;
     request.action = MOVE;
 

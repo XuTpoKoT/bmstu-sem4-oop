@@ -67,19 +67,6 @@ void figure_free(figure_t &figure)
     links_free(figure.links);
 }
 
-//err_t figure_create_copy(figure_t &dst, const figure_t &src)
-//{
-//    err_t rc = points_create_copy(dst.points, src.points);
-
-//    if (rc == OK)
-//        rc = links_create_copy(dst.links, src.links);
-
-//    if (rc != OK)
-//        figure_free(dst);
-
-//    return rc;
-//}
-
 void figure_move(figure_t &figure, const move_options_t &options)
 {
     points_move(figure.points, figure.center, options);

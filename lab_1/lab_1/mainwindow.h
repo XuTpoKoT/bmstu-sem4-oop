@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButton_Rotate_clicked();
 
+    void on_pushButton_load_figure_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

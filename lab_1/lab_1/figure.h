@@ -17,7 +17,6 @@ figure_t& figure_init();
 err_t figure_load(figure_t &figure, const char *filename);
 err_t figure_read(figure_t &figure, FILE *f);
 void figure_free(figure_t &figure);
-// err_t figure_create_copy(figure_t &dst, const figure_t &src);
 
 void figure_move(figure_t &figure, const move_options_t &options);
 void figure_scale(figure_t &figure, const scale_options_t &options);

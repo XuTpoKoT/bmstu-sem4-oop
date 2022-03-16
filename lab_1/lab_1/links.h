@@ -19,6 +19,5 @@ void links_init(links_t &links);
 err_t links_malloc(links_t &links, const int count);
 void links_free(links_t &links);
 err_t links_read(links_t &links, FILE *f);
-err_t links_create_copy(links_t &dst, const links_t &src);
 
 #endif // LINKS_H
