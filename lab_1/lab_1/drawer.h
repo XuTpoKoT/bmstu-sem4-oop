@@ -3,10 +3,13 @@
 
 #include <QGraphicsView>
 
-#include "figure.h"
-
 typedef QGraphicsScene scene_t;
 
-void draw_figure(scene_t *scene, const struct figure_t &figure);
+struct drawer_t {
+    scene_t *scene;
+};
+
+void drawer_draw_line(drawer_t &drawer, double x1, double y1, double x2, double y2);
+void drawer_clear(drawer_t &drawer);
 
 #endif // DRAWER_H

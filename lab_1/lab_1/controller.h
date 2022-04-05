@@ -19,7 +19,7 @@ struct request_t
 {
     action_t action;
     const char *filename;
-    scene_t *scene;
+    drawer_t drawer;
     move_options_t move_options;
     scale_options_t scale_options;
     rotate_options_t rotate_options;

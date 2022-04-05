@@ -16,9 +16,10 @@ void message_error(const err_t &error)
             QMessageBox::critical(NULL, "Ошибка!",
                                   "Неверный формат файла.");
             break;
-        case MEMORY_ERR:
+        case MALLOC_POINTS_ERR:
+        case MALLOC_LINKS_ERR:
             QMessageBox::critical(NULL, "Ошибка!",
-                                  "Ошибка работы с памятью.");
+                                  "Не удалось выделить память.");
             break;
         case READ_POINT_ERR:
             QMessageBox::critical(NULL, "Ошибка!",

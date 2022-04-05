@@ -29,7 +29,7 @@ err_t execute_and_show(request_t req, Ui::MainWindow *ui)
     if (rc == OK) {
         request_t draw_request = {
             .action = DRAW,
-            .scene = ui->graphicsView->scene()
+            .drawer = { .scene = ui->graphicsView->scene() }
         };
         rc = execute(draw_request);
     }
@@ -43,7 +43,6 @@ void MainWindow::on_pushButton_load_figure_clicked()
     request_t request;
     request.action = LOAD_FIGURE;
     request.filename = ui->lineEdit_model_file->text().toStdString().c_str();
-    request.scene = ui->graphicsView->scene();
     err_t rc = execute_and_show(request, ui);
     if (rc != OK)
         message_error(rc);

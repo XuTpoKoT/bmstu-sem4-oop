@@ -18,8 +18,10 @@ err_t figure_load(figure_t &figure, const char *filename);
 err_t figure_read(figure_t &figure, FILE *f);
 void figure_free(figure_t &figure);
 
-void figure_move(figure_t &figure, const move_options_t &options);
-void figure_scale(figure_t &figure, const scale_options_t &options);
+err_t figure_move(figure_t &figure, const move_options_t &options);
+err_t figure_scale(figure_t &figure, const scale_options_t &options);
 err_t figure_rotate(figure_t &figure, const rotate_options_t &options);
+
+err_t figure_draw(drawer_t &drawer, const struct figure_t &figure);
 
 #endif // FIGURE_H

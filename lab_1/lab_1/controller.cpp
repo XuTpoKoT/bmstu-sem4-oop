@@ -11,13 +11,13 @@ err_t execute(request_t &req)
             rc = figure_load(figure, req.filename);
             break;
         case DRAW:
-            draw_figure(req.scene, figure);
+            rc = figure_draw(req.drawer, figure);
             break;
         case MOVE:
-            figure_move(figure, req.move_options);
+            rc = figure_move(figure, req.move_options);
             break;
         case SCALE:
-            figure_scale(figure, req.scale_options);
+            rc = figure_scale(figure, req.scale_options);
             break;
         case ROTATE:
             rc = figure_rotate(figure, req.rotate_options);
