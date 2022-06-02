@@ -3,16 +3,16 @@
 #include <fstream>
 #include <istream>
 #include "object.h"
-#include "abstract_loader.h"
-#include "base_loader.h"
+#include "base_model_loader.h"
+#include "abstract_source_loader.h"
 #include "vector.h"
-#include "model_director.h"
+#include "carcass_model_director.h"
 
-class TextFileLoader: public BaseLoader {
+class TextFileLoader: public AbstractSourceLoader {
 public:
     ~TextFileLoader();
-    Vector<Point<double>> readPoints() override;
-    Vector<Link<int>> readLinks() override;
+    Vector<Point> readPoints() override;
+    Vector<Edge> readLinks() override;
     bool isOpen() const override;
     void open(std::string) override;
     void close() override;
@@ -20,9 +20,9 @@ private:
     std::ifstream _sourceStream;
 };
 
-class ModelLoader: public AbstractLoader {
+class ModelLoader: public BaseModelLoader {
 public:
-    ModelLoader(std::shared_ptr<BaseLoader> loader, std::shared_ptr<BaseModelDirector> director);
+    ModelLoader(std::shared_ptr<AbstractSourceLoader> loader, std::shared_ptr<BaseModelDirector> director);
     ~ModelLoader() = default;
     std::shared_ptr<BaseModel> loadModel(std::string sourceName) override;
 private:

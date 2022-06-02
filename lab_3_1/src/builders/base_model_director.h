@@ -10,7 +10,7 @@
 class BaseModelDirector {
 public:
     ~BaseModelDirector() = default;
-    virtual std::shared_ptr<BaseModel> buildModel(const Vector<Point> &points, const Vector<Edge> &edges) = 0;
-protected:
-    std::shared_ptr<BaseModelBuilder> _builder;
+    // virtual std::shared_ptr<BaseModel> buildModel(const Vector<Point> &points, const Vector<Edge> &edges) = 0;
+//protected:
+//    std::shared_ptr<BaseModelBuilder> _builder;
 };

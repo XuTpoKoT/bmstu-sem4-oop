@@ -1,6 +1,6 @@
 #include "load_manager_creator.h"
 
-std::shared_ptr<ModelLoadManager> LoadManagerCreator::createManager(std::shared_ptr<AbstractLoader> loader) {
+std::shared_ptr<ModelLoadManager> LoadManagerCreator::createManager(std::shared_ptr<BaseModelLoader> loader) {
     if (_manager == nullptr)
         createInstance();
     _manager->setLoader(loader);

@@ -4,10 +4,10 @@
 #include "edge.h"
 #include "point.h"
 
-class BaseLoader
+class AbstractSourceLoader
 {
 public:
-    ~BaseLoader() = default;
+    ~AbstractSourceLoader() = default;
 
     virtual void open(std::string source_name) = 0;
     virtual bool isOpen() const = 0;

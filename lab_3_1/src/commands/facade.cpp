@@ -19,8 +19,8 @@ Facade::Facade() {
     _scene = _sceneManager->getScene();
 
     LoaderSolution solution;
-    solution.configure(TXT, AbstractLoaderCreator::createLoader); // BaseModelLoaderCreator
-    std::shared_ptr<AbstractLoaderCreator> creator(new ModelLoaderCreator());
+    solution.configure(TXT, BaseModelLoaderCreator::createLoader); // BaseModelLoaderCreator
+    std::shared_ptr<BaseModelLoaderCreator> creator(new ModelLoaderCreator());
     auto loader = solution.createLoader(creator.get());
     _modelLoadManager = LoadManagerCreator().createManager(loader);
 

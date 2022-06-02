@@ -4,7 +4,7 @@ TextFileLoader::~TextFileLoader() {
     close();
 }
 
-ModelLoader::ModelLoader(std::shared_ptr<BaseLoader> loader, std::shared_ptr<BaseModelDirector> director) {
+ModelLoader::ModelLoader(std::shared_ptr<AbstractSourceLoader> loader, std::shared_ptr<BaseModelDirector> director) {
     _loader = loader;
     _director = director;
 }
@@ -83,7 +83,7 @@ std::shared_ptr<BaseModel> ModelLoader::loadModel(std::string sourceName)
     const Vector<Edge> links = _loader->readLinks();
     _loader->close();
 
-    ModelDirector director;
+    CarcassModelDirector director;
     auto model = director.buildModel(points, links);
     return model;
 }

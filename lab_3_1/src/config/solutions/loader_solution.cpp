@@ -2,10 +2,10 @@
 
 LoaderSolution::LoaderSolution(): _configuration(ConfigurationCreator().createConfiguration()) {}
 
-std::shared_ptr<AbstractLoader> LoaderSolution::createLoader(AbstractLoaderCreator *creator) {
+std::shared_ptr<BaseModelLoader> LoaderSolution::createLoader(BaseModelLoaderCreator *creator) {
     auto id = _configuration->getLoader();
     auto it = _creatorMap.find(id);
-    std::shared_ptr<AbstractLoader> loader = (creator->*(it->second))();
+    std::shared_ptr<BaseModelLoader> loader = (creator->*(it->second))();
     return loader;
 }
 

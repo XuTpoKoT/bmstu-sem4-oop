@@ -1,5 +1,9 @@
 #include "base_model.h"
 
+BaseModel::~BaseModel() {
+
+}
+
 BaseModel::BaseModel(const MoveParams &moveParams, const RotateParams &rotateParams, const ScaleParams &scaleParams, std::shared_ptr<BaseModelStructure> impl):
     VisibleObject(moveParams, rotateParams, scaleParams),
     structure(impl)

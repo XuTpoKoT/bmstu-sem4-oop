@@ -3,7 +3,7 @@
 #include <QGraphicsScene>
 #include <camera.h>
 
-#include "abstract_loader.h"
+#include "base_model_loader.h"
 
 #include "drawer_solution.h"
 #include "loader_solution.h"

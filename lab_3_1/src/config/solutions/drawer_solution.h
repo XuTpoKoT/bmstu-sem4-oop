@@ -2,7 +2,7 @@
 
 #include "qt_drawer_factory.h"
 #include "text_file_loader.h"
-#include "model_director.h"
+#include "carcass_model_director.h"
 #include <QGraphicsScene>
 #include "errors.h"
 #include "configuration_creator.h"

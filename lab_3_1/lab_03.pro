@@ -9,8 +9,8 @@ CONFIG += c++20
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/builders/model_builder.cpp \
-    src/builders/model_director.cpp \
+    src/builders/carcass_model_builder.cpp \
+    src/builders/carcass_model_director.cpp \
     src/commands/command.cpp \
     src/commands/facade.cpp \
     src/config/configuration/map_configuration.cpp \
@@ -37,10 +37,10 @@ SOURCES += \
     src/managers/scene_manager.cpp \
     src/managers/transform_manager.cpp \
     src/objects/base_model.cpp \
-    src/objects/basemodelstructure.cpp \
+    src/objects/base_model_structure.cpp \
     src/objects/camera.cpp \
+    src/objects/carcass_model.cpp \
     src/objects/carcass_model_structure.cpp \
-    src/objects/carcassmodelstructure.cpp \
     src/objects/composite.cpp \
     src/objects/object.cpp \
     src/scene/scene.cpp \
@@ -70,8 +70,8 @@ INCLUDEPATH += \
 HEADERS += \
     src/builders/base_model_builder.h \
     src/builders/base_model_director.h \
-    src/builders/model_builder.h \
-    src/builders/model_director.h \
+    src/builders/carcass_model_builder.h \
+    src/builders/carcass_model_director.h \
     src/commands/command.h \
     src/commands/facade.h \
     src/commands/facade.hpp \
@@ -96,8 +96,8 @@ HEADERS += \
     src/drawer/qt_drawer_factory.h \
     src/errors/base_error.h \
     src/errors/errors.h \
-    src/loaders/abstract_loader.h \
-    src/loaders/base_loader.h \
+    src/loaders/abstract_source_loader.h \
+    src/loaders/base_model_loader.h \
     src/loaders/text_file_loader.h \
     src/mainwindow.h \
     src/managers/base_manager.h \
@@ -107,10 +107,10 @@ HEADERS += \
     src/managers/scene_manager.h \
     src/managers/transform_manager.h \
     src/objects/base_model.h \
-    src/objects/basemodelstructure.h \
+    src/objects/base_model_structure.h \
     src/objects/camera.h \
+    src/objects/carcass_model.h \
     src/objects/carcass_model_structure.h \
-    src/objects/carcassmodelstructure.h \
     src/objects/composite.h \
     src/objects/invisible_object.h \
     src/objects/object.h \

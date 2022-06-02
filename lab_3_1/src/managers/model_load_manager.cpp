@@ -1,6 +1,6 @@
 #include "model_load_manager.h"
 
-void ModelLoadManager::setLoader(std::shared_ptr<AbstractLoader> loader) {
+void ModelLoadManager::setLoader(std::shared_ptr<BaseModelLoader> loader) {
     _loader = loader;
 }
 
