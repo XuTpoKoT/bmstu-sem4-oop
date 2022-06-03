@@ -10,6 +10,6 @@ Camera::Camera(): InvisibleObject() {
 //    this->scaleParams = scaleParams;
 //}
 
-//void Camera::accept(std::shared_ptr<BaseVisitor> visitor) {
-//    visitor->visit(*this);
-//}
+void Camera::accept(std::shared_ptr<BaseVisitor> visitor) {
+    visitor->visit(*this);
+}

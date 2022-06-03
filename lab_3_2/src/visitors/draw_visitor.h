@@ -7,20 +7,22 @@
 #include <vector>
 #include "point.h"
 #include "edge.h"
-#include "base_model.h"
+#include "carcass_model.h"
 #include "camera.h"
+#include "composite.h"
 
-class DrawVisitor: public BaseVisitor {
+class DrawVisitor {
 public:
-    DrawVisitor(): _camera(nullptr) {};
+    DrawVisitor(): camera(nullptr) {};
     DrawVisitor(std::shared_ptr<Camera> camera, std::shared_ptr<AbstractDrawer> drawer):
-        _camera(camera),
-        _drawer(drawer)
+        camera(camera),
+        drawer(drawer)
     {};
     ~DrawVisitor() = default;
-    void visit(BaseModel &model) override;
-    void visit(Camera &camera) override;
-    void visit(Composite &composite) override;
+    void visit(BaseModel &model) {}
+    void visit(CarcassModel &model);
+    void visit(Camera &camera);
+    void visit(Composite &composite);
 private:
     double convertDegreesToRadians(const double &degrees);
     Point projectPointOnCamera(
@@ -30,6 +32,6 @@ private:
             const RotateParams &modelRot,
             const ScaleParams &modelSc
     );
-    std::shared_ptr<Camera> _camera;
-    std::shared_ptr<AbstractDrawer> _drawer;
+    std::shared_ptr<Camera> camera;
+    std::shared_ptr<AbstractDrawer> drawer;
 };

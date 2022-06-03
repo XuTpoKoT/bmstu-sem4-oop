@@ -2,10 +2,12 @@
 
 #include <fstream>
 #include <istream>
-#include "object.h"
-#include "abstract_source_model_reader.h"
 #include <vector>
+
+#include "abstract_source_model_reader.h"
 #include "model_director.h"
+#include "errors.h"
+#include "object.h"
 
 class TextFileModelReader: public AbstractSourceModelReader {
 public:

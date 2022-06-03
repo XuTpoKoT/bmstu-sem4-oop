@@ -1,12 +1,12 @@
 #include "camera_manager_creator.h"
 
 std::shared_ptr<CameraAddManager> CameraManagerCreator::createManager() {
-    if (_manager == nullptr)
+    if (manager == nullptr)
         createInstance();
-    return _manager;
+    return manager;
 }
 
 void CameraManagerCreator::createInstance() {
     auto manager = std::make_shared<CameraAddManager>();
-    _manager = manager;
+    manager = manager;
 }

@@ -16,18 +16,18 @@ class Model;
 class DrawManager: public BaseManager {
 public:
     DrawManager():
-        _drawer(nullptr),
-        _currentCamera(nullptr),
-        _currentModel(nullptr)
+        drawer(nullptr),
+        currentCamera(nullptr),
+        currentModel(nullptr)
     {};
-    DrawManager(const DrawManager &other) {_drawer = other._drawer;};
+    DrawManager(const DrawManager &other) {drawer = other.drawer;};
     ~DrawManager() = default;
     void setDrawer(std::shared_ptr<AbstractDrawer> drawer);
     void drawScene();
     void setCurrentCamera(std::shared_ptr<Object> camera);
     void setCurrentModel(std::shared_ptr<Object> model);
 private:
-    std::shared_ptr<AbstractDrawer> _drawer;
-    std::shared_ptr<Camera> _currentCamera;
-    std::shared_ptr<BaseModel> _currentModel;
+    std::shared_ptr<AbstractDrawer> drawer;
+    std::shared_ptr<Camera> currentCamera;
+    std::shared_ptr<BaseModel> currentModel;
 };

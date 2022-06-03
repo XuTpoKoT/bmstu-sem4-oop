@@ -13,20 +13,19 @@ SOURCES += \
     src/builders/model_director.cpp \
     src/commands/command.cpp \
     src/commands/facade.cpp \
-    src/config/configuration/project_configuration.cpp \
-    src/config/solutions/drawer_solution.cpp \
-    src/config/solutions/loader_solution.cpp \
+    src/config/configuration/project_config.cpp \
     src/creators/base_creator.cpp \
     src/creators/camera_creator.cpp \
     src/creators/camera_manager_creator.cpp \
-    src/creators/configuration_creator.cpp \
     src/creators/draw_manager_creator.cpp \
     src/creators/facade_creator.cpp \
-    src/creators/load_manager_creator.cpp \
+    src/creators/model_load_manager_creator.cpp \
+    src/creators/model_reader_creator.cpp \
+    src/creators/project_config_creator.cpp \
     src/creators/scene_manager_creator.cpp \
     src/creators/transform_manager_creator.cpp \
     src/drawer/qt_drawer.cpp \
-    src/drawer/qt_drawer_factory.cpp \
+    src/drawer/qt_drawer_creator.cpp \
     src/loaders/text_file_model_reader.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
@@ -71,22 +70,21 @@ HEADERS += \
     src/commands/command.h \
     src/commands/facade.h \
     src/commands/facade.hpp \
-    src/config/configuration/project_configuration.h \
-    src/config/solutions/drawer_solution.h \
-    src/config/solutions/loader_solution.h \
+    src/config/configuration/project_config.h \
     src/creators/base_creator.h \
     src/creators/camera_creator.h \
     src/creators/camera_manager_creator.h \
-    src/creators/configuration_creator.h \
     src/creators/draw_manager_creator.h \
     src/creators/facade_creator.h \
-    src/creators/load_manager_creator.h \
+    src/creators/model_load_manager_creator.h \
+    src/creators/model_reader_creator.h \
+    src/creators/project_config_creator.h \
     src/creators/scene_manager_creator.h \
     src/creators/transform_manager_creator.h \
     src/drawer/abstract_drawer.h \
-    src/drawer/abstract_drawer_factory.h \
+    src/drawer/abstract_drawer_creator.h \
     src/drawer/qt_drawer.h \
-    src/drawer/qt_drawer_factory.h \
+    src/drawer/qt_drawer_creator.h \
     src/errors/base_error.h \
     src/errors/errors.h \
     src/loaders/abstract_source_model_reader.h \

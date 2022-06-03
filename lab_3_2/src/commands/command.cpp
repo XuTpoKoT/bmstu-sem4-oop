@@ -5,7 +5,7 @@ void DrawCommand::run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_
 }
 
 void SetupDrawerCommand::run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_ptr<DrawManager> manager) {
-    (*manager.*_action)(_drawer);
+    (*manager.*_action)(drawer);
 }
 
 void SetCurrentCameraCommand::run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_ptr<DrawManager> manager) {

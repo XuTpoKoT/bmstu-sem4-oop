@@ -3,15 +3,10 @@
 #include <QGraphicsScene>
 #include <camera.h>
 
-#include "base_model_loader.h"
-
-#include "drawer_solution.h"
-#include "loader_solution.h"
-
 #include "draw_manager_creator.h"
 #include "scene_manager_creator.h"
 #include "transform_manager_creator.h"
-#include "load_manager_creator.h"
+#include "model_load_manager_creator.h"
 #include "camera_manager_creator.h"
 
 template<typename Manager>
@@ -19,14 +14,14 @@ class BaseCommand {
 public:
     BaseCommand(): id(nullptr) {};
     BaseCommand(std::shared_ptr<int> id) {
-        id = id;
+        this->id = id;
     };
     BaseCommand(std::shared_ptr<int> id, int compositeId) {
-        id = id;
+        this->id = id;
         _compositeId = compositeId;
     }
     ~BaseCommand() = default;
-    void setId(int id) { *id = id; };
+    void setId(int id) { *this->id = id; };
     std::shared_ptr<int> getId() { return id; };
     int getCompositeId() {return _compositeId;};
     virtual void run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_ptr<Manager> manager) = 0;
@@ -41,14 +36,14 @@ public:
     SetupDrawerCommand() = delete;
     explicit SetupDrawerCommand(Action a, std::shared_ptr<AbstractDrawer> drawer):
         BaseCommand<DrawManager>(),
-        _drawer(drawer),
+        drawer(drawer),
         _action(a)
     {};
     ~SetupDrawerCommand() = default;
     void run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_ptr<DrawManager> manager) override;
 private:
     Action _action;
-    std::shared_ptr<AbstractDrawer> _drawer;
+    std::shared_ptr<AbstractDrawer> drawer;
 };
 
 class DrawCommand: public BaseCommand<DrawManager> {
@@ -57,14 +52,14 @@ public:
     DrawCommand() = delete;
     explicit DrawCommand(Action a, std::shared_ptr<AbstractDrawer> drawer):
         BaseCommand<DrawManager>(),
-        _drawer(drawer),
+        drawer(drawer),
         _action(a)
     {};
     ~DrawCommand() = default;
     void run(std::shared_ptr<std::shared_ptr<Object>> obj, std::shared_ptr<DrawManager> manager) override;
 private:
     Action _action;
-    std::shared_ptr<AbstractDrawer> _drawer;
+    std::shared_ptr<AbstractDrawer> drawer;
 };
 
 class SetCurrentCameraCommand: public BaseCommand<DrawManager> {

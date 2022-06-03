@@ -6,12 +6,15 @@
 #include <QFileDialog>
 #include <QString>
 #include <QMessageBox>
-#include "facade_creator.h"
+
 #include "errors.h"
+#include "facade_creator.h"
+#include "project_config_creator.h"
+#include "qt_drawer_creator.h"
 
-#include "drawer_solution.h"
-
-#include "abstract_drawer.h"
+#ifndef CONFIG_SOURCE
+#define CONFIG_SOURCE "../lab_03/assets/config.txt"
+#endif
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -41,15 +44,15 @@ private slots:
     void on_setModelButton_clicked();
 
 private:
-    std::shared_ptr<AbstractDrawerFactory> createQtDrawerFactory();
+    std::shared_ptr<AbstractDrawerCreator> createQtDrawerFactory();
     void setupDrawer();
     Ui::MainWindow *ui;
-    std::shared_ptr<Facade> _facade;
+    std::shared_ptr<Facade> facade;
     int _cameraCount;
     int _modelCount;
-    std::shared_ptr<QGraphicsScene> _scene;
+    std::shared_ptr<QGraphicsScene> scene;
     std::vector<int> _modelIds;
-    std::vector<int> _cameraIds;
-    std::shared_ptr<AbstractDrawer> _drawer;
+    std::vector<int> cameraIds;
+    std::shared_ptr<AbstractDrawer> drawer;
 };
 #endif // MAINWINDOW_H

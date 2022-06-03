@@ -8,5 +8,5 @@ public:
     std::shared_ptr<CameraAddManager> createManager();
 private:
     void createInstance() override;
-    std::shared_ptr<CameraAddManager> _manager;
+    std::shared_ptr<CameraAddManager> manager;
 };

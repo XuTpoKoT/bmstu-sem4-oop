@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vector.h"
+#include <vector>
 #include "base_visitor.h"
 #include "point.h"
 
@@ -24,7 +24,7 @@ struct RotateParams {
 
 class Object;
 
-using VectorObject = Vector<std::shared_ptr<Object>>;
+using VectorObject = std::vector<std::shared_ptr<Object>>;
 using IteratorObject = VectorObject::iterator;
 
 class Object {
@@ -32,7 +32,7 @@ public:
         Object();
         virtual ~Object() = 0;
 
-        //virtual void accept(std::shared_ptr<BaseVisitor> visitor) = 0;
+        virtual void accept(std::shared_ptr<BaseVisitor> visitor) = 0;
 
         virtual void move(const MoveParams &moveParams);
         virtual void rotate(const RotateParams &rotateParams);

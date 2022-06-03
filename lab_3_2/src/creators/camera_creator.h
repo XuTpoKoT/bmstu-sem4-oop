@@ -9,5 +9,5 @@ public:
     std::shared_ptr<Camera> createCamera();
 private:
     void createInstance() override;
-    std::shared_ptr<Camera> _camera;
+    std::shared_ptr<Camera> camera;
 };

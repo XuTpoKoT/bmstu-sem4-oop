@@ -5,11 +5,11 @@
 
 class CarcassModel : BaseModel {
     friend class CarcassModelBuilder;
+    friend class DrawVisitor;
 public:
     ~CarcassModel();
 protected:
     CarcassModel();
-    //CarcassModel(std::vector<Point> points, std::vector<Edge> edges);
     std::vector<Point> points;
     std::vector<Edge> edges;
 };

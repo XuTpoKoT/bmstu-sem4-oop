@@ -8,7 +8,7 @@ enum class ModelType {
 };
 
 class BaseModel : public VisibleObject {
-    friend class DrawVisitor; // method
 public:
     virtual ~BaseModel() = default;
+    void accept(std::shared_ptr<BaseVisitor> visitor) override;
 };

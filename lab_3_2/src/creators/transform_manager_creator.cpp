@@ -1,9 +1,9 @@
 #include "transform_manager_creator.h"
 
 std::shared_ptr<TransformManager> TransformManagerCreator::createManager() {
-    return _manager;
+    return manager;
 }
 
 void TransformManagerCreator::createInstance() {
-    _manager = std::make_shared<TransformManager>();
+    manager = std::make_shared<TransformManager>();
 }

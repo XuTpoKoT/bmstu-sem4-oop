@@ -1,6 +1,6 @@
-#include "project_configuration.h"
+#include "project_config.h"
 
-void ProjectConfiguration::readConfiguration(std::string sourceName) {
+void ProjectConfig::readConfiguration(std::string sourceName) {
     time_t t_time = time(NULL);
     std::ifstream stream;
 
@@ -14,7 +14,7 @@ void ProjectConfiguration::readConfiguration(std::string sourceName) {
     stream.close();
 }
 
-void ProjectConfiguration::readFrameworkType(std::ifstream &stream) {
+void ProjectConfig::readFrameworkType(std::ifstream &stream) {
     std::string strFrameworkType;
     stream >> strFrameworkType;
     if (strFrameworkType == "QT") {
@@ -24,7 +24,7 @@ void ProjectConfiguration::readFrameworkType(std::ifstream &stream) {
     }
 }
 
-void ProjectConfiguration::readSourceStreamType(std::ifstream &stream) {
+void ProjectConfig::readSourceStreamType(std::ifstream &stream) {
     std::string strSourceStreamType;
     stream >> strSourceStreamType;
     if (strSourceStreamType == "TXT") {
@@ -34,10 +34,10 @@ void ProjectConfiguration::readSourceStreamType(std::ifstream &stream) {
     }
 }
 
-FrameworkType ProjectConfiguration::getFrameworkType() {
+FrameworkType ProjectConfig::getFrameworkType() {
     return frameworkType;
 }
 
-SourceStreamType ProjectConfiguration::getSourceStreamType() {
+SourceStreamType ProjectConfig::getSourceStreamType() {
     return sourceStreamType;
 }

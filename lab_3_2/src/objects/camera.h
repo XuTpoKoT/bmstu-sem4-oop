@@ -10,5 +10,5 @@ public:
     Camera();
     ~Camera() = default;
 
-    // void accept(std::shared_ptr<BaseVisitor> visitor) override;
+    void accept(std::shared_ptr<BaseVisitor> visitor) override;
 };

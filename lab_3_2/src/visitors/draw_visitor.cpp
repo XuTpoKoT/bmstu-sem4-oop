@@ -34,24 +34,22 @@ Point DrawVisitor::projectPointOnCamera(
 }
 
 void DrawVisitor::visit(CarcassModel &model) {
-    std::vector<Point> points = model.structure->getPoints();
-    std::vector<Edge> lines = model.structure->getLinks();
-    for (auto line: lines) {
+    for (auto edge: model.edges) {
         auto p1 = projectPointOnCamera(
-            _camera,
-            points[line.getIndex1()],
+            camera,
+            model.points[edge.getIndex1()],
             model.getPosition(),
             model.getRotation(),
             model.getScale()
         );
         auto p2 = projectPointOnCamera(
-            _camera,
-            points[line.getIndex2()],
+            camera,
+            model.points[edge.getIndex2()],
             model.getPosition(),
             model.getRotation(),
             model.getScale()
         );
-        _drawer->drawLine(p1, p2);
+        drawer->drawLine(p1, p2);
     }
 }
 

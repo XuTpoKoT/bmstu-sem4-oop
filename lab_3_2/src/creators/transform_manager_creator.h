@@ -10,5 +10,5 @@ public:
     std::shared_ptr<TransformManager> createManager();
 private:
     void createInstance() override;
-    std::shared_ptr<TransformManager> _manager;
+    std::shared_ptr<TransformManager> manager;
 };

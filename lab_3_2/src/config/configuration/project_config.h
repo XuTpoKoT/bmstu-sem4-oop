@@ -14,9 +14,9 @@ enum class SourceStreamType {
     TXT
 };
 
-class ProjectConfiguration {
+class ProjectConfig {
 public:
-    ~ProjectConfiguration() = default;
+    ~ProjectConfig() = default;
     void readConfiguration(std::string sourceName);
     FrameworkType getFrameworkType();
     SourceStreamType getSourceStreamType();
